@@ -22,12 +22,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Installing sfdx
+        run: |
+          wget https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-x64.tar.xz
+          mkdir sfdx
+          tar xJf sfdx-linux-x64.tar.xz -C sfdx --strip-components 1
+          ./sfdx/install
+        
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
