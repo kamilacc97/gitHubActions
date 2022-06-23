@@ -17,4 +17,7 @@ jobs:
 
       - name: Install Package dependencies
         run: |
-          echo '${{ env.GIT_DIFF[0] }}'
+          myArray = ("cat" "dog" "mouse" "frog")
+          for str in ${myArray[@]}; do
+            echo $str
+          done
