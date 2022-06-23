@@ -17,4 +17,4 @@ jobs:
 
       - name: Install Package dependencies
         run: |
-          echo '${{ env.GIT_DIFF }}' | jq .
+          echo '${{ env.GIT_DIFF[0] }}'
