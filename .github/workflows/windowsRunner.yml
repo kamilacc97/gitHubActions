@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: CPX-OJUGFDD3KIK
+    runs-on: runs-on: [self-hosted, windows, x64]
 
     steps:
       - name: helloMessage
