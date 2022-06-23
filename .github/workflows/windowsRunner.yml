@@ -1,0 +1,14 @@
+name: windowsTest 
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: CPX-OJUGFDD3KIK
+
+    steps:
+      - name: helloMessage
+        run: |
+          Write-Host "Hello"
