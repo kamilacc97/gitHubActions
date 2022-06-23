@@ -12,3 +12,4 @@ jobs:
       - name: helloMessage
         run: |
           Write-Host "Hello"
+          sfdx --version
