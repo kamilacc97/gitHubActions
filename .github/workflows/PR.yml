@@ -16,7 +16,6 @@ jobs:
 
       - name: create delta-package
         run: |
-
           $pathsString = git diff origin/main origin/${{ github.head_ref }} --name-only force-app
           Write-Host $pathsString
           $pathArray = $pathsString.Split()
@@ -28,15 +27,11 @@ jobs:
               $temp =  $destination.Split("/")
               $destination = $destination.Replace("/"+$temp[$temp.Count-1],"")
 
-              Write-Host "XDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-              Write-Host $destination
-
               if (!(Test-Path -path $destination)) {New-Item $destination -Type Directory}
               Copy-Item $_ -Destination $destination
           }
 
       - name: deployment
         run: |
-          ls .\delta-package\main\default\objects\Test2__c\Test2__c.object-meta.xml 
           sfdx force:source:deploy --sourcepath delta-package -u kamil.walo@cunning-fox-sfdga7.com
        
