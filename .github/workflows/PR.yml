@@ -2,7 +2,7 @@ name: DEPLOYMENT
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [self-hosted, windows, x64]
 
 
 jobs:
@@ -15,9 +15,15 @@ jobs:
         with:
           FORMAT: json
 
-      - name: Install Package dependencies
+      - name: 
         run: |
-          myArray = ("cat" "dog" "mouse" "frog")
-          for str in ${myArray[@]}; do
-            echo $str
-          done
+          $pathsString = ${{ env.GIT_DIFF }}
+          $pathArray = $pathsString.Split()
+
+          mkdir delta-package
+
+          $pathArray | ForEach{
+              Move-Item -Path $_ -Destination .\delta-package
+          }
+
+          ls delta-package
