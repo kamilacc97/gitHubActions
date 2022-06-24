@@ -34,6 +34,6 @@ jobs:
 
       - name: deployment
         run: |
-          ls .\delta-package\main\default\objects\Test2__c\
+          ls .\delta-package\main\default\objects\Test2__c\Test2__c.object-meta.xml 
           sfdx force:source:deploy --sourcepath delta-package -u kamil.walo@cunning-fox-sfdga7.com
        
