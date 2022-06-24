@@ -31,7 +31,12 @@ jobs:
               if (!(Test-Path -path $destination)) {New-Item $destination -Type Directory}
               Copy-Item $_ -Destination $destination
           }
-          
-      -name: authorization with sfdx
-       run: |
-        sfdx auth:list
+
+          ls delta-package
+          ls delta-package\main
+          ls delta-package\main\default
+          ls delta-package\main\default\objects
+
+          ls delta-package\main\default\objects\Test2__c 
+          ls delta-package\main\default\objects\Test3__c
+       
