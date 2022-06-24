@@ -30,7 +30,9 @@ jobs:
               if (!(Test-Path -path $destination)) {New-Item $destination -Type Directory}
               Copy-Item $_ -Destination $destination
           }
-
+      - name: authorization
+        run: |
+          sfdx auth:sfdxurl:store -f ${{ secrets.AUTH_FILE }}
       - name: deployment
         run: |
           sfdx force:source:deploy --sourcepath delta-package -u kamil.walo@cunning-fox-sfdga7.com
