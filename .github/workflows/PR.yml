@@ -32,11 +32,7 @@ jobs:
               Copy-Item $_ -Destination $destination
           }
 
-          ls delta-package
-          ls delta-package\main
-          ls delta-package\main\default
-          ls delta-package\main\default\objects
-
-          ls delta-package\main\default\objects\Test2__c 
-          ls delta-package\main\default\objects\Test3__c
+      - name: sfdx auth
+        run: |
+          sfdx auth:list
        
