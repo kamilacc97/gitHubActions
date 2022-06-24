@@ -32,7 +32,7 @@ jobs:
               Copy-Item $_ -Destination $destination
           }
 
-      - name: sfdx auth
+      - name: deployment
         run: |
-          sfdx force:source:deploy --sourcepath delta-package
+          sfdx force:source:deploy --sourcepath delta-package -u kamil.walo@cunning-fox-sfdga7.com
        
