@@ -16,6 +16,7 @@ jobs:
         run: |
 
           Write-Host ${{ github.head_ref }}
+          Write-Host ${{ github.base_ref }}
 
           $pathsString = git diff ${{ github.GITHUB_BASE_REF }} ${{ github.GITHUB_HEAD_REF }} --name-only force-app
           Write-Host $pathsString
