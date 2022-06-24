@@ -24,12 +24,12 @@ jobs:
           mkdir delta-package
 
           $pathArray | ForEach{
-              $destination = $pathsString.Replace("force-app","delta-package")
+              $destination = $_.Replace("force-app","delta-package")
               $temp =  $destination.Split("\")
               $destination = $destination.Replace("\"+$temp[$temp.Count-1],"")
 
               if (!(Test-Path -path $destination)) {New-Item $destination -Type Directory}
-              Copy-Item $pathsString -Destination $destination
+              Copy-Item $_ -Destination $destination
           }
 
           ls delta-package
