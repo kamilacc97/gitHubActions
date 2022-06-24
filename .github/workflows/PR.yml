@@ -11,10 +11,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+        fetch-depth: 2
 
       - name: create delta-package
         run: |
-          git fetch origin main:refs/remotes/origin/main
+          git diff main ${{ github.head_ref }} --name-only force-app
 
           $pathsString = git diff main ${{ github.head_ref }} --name-only force-app
           Write-Host $pathsString
