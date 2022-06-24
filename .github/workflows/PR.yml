@@ -24,7 +24,11 @@ jobs:
           mkdir delta-package
 
           $pathArray | ForEach{
-              Move-Item -Path $_ -Destination .\delta-package
+              $destination = $_.Replace("force-app","delta-package")
+              Move-Item -Path $_ -Destination $destination
           }
 
           ls delta-package
+          ls delta-package\main
+          ls delta-package\main\default
+          ls delta-package\main\default\objects
