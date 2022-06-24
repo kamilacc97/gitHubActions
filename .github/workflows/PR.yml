@@ -12,10 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: technote-space/get-diff-action@v6
-        with:
-          FORMAT: json
 
-      - name: 
+      - name: create delta-package
         run: |
           $pathsString = ${{ env.GIT_DIFF }}
           $pathArray = $pathsString.Split()
