@@ -16,7 +16,7 @@ jobs:
         run: |
           ls
 
-          $pathsString = git diff ${{ github.base_ref }} ${{ github.head_ref }} --name-only force-app
+          $pathsString = git diff main ${{ github.head_ref }} --name-only force-app
           Write-Host $pathsString
           $pathArray = $pathsString.Split()
 
