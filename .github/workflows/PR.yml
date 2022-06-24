@@ -16,7 +16,7 @@ jobs:
 
       - name: create delta-package
         run: |
-          git diff main ${{ github.head_ref }} --name-only force-app
+          git diff origin/main origin/${{ github.head_ref }} --name-only force-app
 
           $pathsString = git diff main ${{ github.head_ref }} --name-only force-app
           Write-Host $pathsString
