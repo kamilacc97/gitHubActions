@@ -36,3 +36,6 @@ jobs:
           ls delta-package\main
           ls delta-package\main\default
           ls delta-package\main\default\objects
+
+          ls delta-package\main\default\objects\Test2__c 
+          ls delta-package\main\default\objects\Test3__c
