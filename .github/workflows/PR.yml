@@ -14,9 +14,9 @@ jobs:
 
       - name: create delta-package
         run: |
-          ls
+          git fetch origin main:refs/remotes/origin/main
 
-          $pathsString = git diff main feature/feature-01 --name-only force-app
+          $pathsString = git diff main ${{ github.head_ref }} --name-only force-app
           Write-Host $pathsString
           $pathArray = $pathsString.Split()
 
