@@ -25,6 +25,7 @@ jobs:
 
           $pathArray | ForEach{
               $destination = $_.Replace("force-app","delta-package")
+              Write-host  $destination
               Move-Item -Path $_ -Destination $destination
           }
 
