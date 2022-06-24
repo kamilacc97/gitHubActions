@@ -25,8 +25,8 @@ jobs:
 
           $pathArray | ForEach{
               $destination = $_.Replace("force-app","delta-package")
-              $temp =  $destination.Split("\")
-              $destination = $destination.Replace("\"+$temp[$temp.Count-1],"")
+              $temp =  $destination.Split("/")
+              $destination = $destination.Replace("/"+$temp[$temp.Count-1],"")
 
               Write-Host "XDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
               Write-Host $destination
