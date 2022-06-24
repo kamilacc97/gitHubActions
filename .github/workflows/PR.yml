@@ -34,5 +34,5 @@ jobs:
 
       - name: sfdx auth
         run: |
-          sfdx --sourcepath --sourcepath delta-package
+          sfdx force:source:deploy --sourcepath delta-package
        
