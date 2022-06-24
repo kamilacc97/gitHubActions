@@ -34,5 +34,5 @@ jobs:
 
       - name: sfdx auth
         run: |
-          sfdx auth:list
+          sfdx --sourcepath --sourcepath delta-package
        
