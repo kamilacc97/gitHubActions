@@ -32,13 +32,6 @@ jobs:
               WRITE-HOST $toCopy
               Copy-Item $toCopy/* -Destination $destination
 
-
-              #$destination = $_.Replace("force-app","delta-package")
-              #$temp =  $destination.Split("/")
-              #$destination = $destination.Replace("/"+$temp[$temp.Count-1],"")
-
-              #if (!(Test-Path -path $destination)) {New-Item $destination -Type Directory}
-              #Copy-Item $_ -Destination $destination
           }
       - name: authorization
         run: |
