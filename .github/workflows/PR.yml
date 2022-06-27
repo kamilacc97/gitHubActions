@@ -25,11 +25,12 @@ jobs:
           $pathArray | ForEach{
               
               $splitedPath = $_.Split("/")
-              $destination = "delta-package"+"/main/default/"+$splitedPath[3]
+              $destination = "delta-package"+"/main/default/"+$splitedPath[3]+"/"+$splitedPath[4]
               if (!(Test-Path -path $destination)) {New-Item $destination -Type Directory}
 
               $toCopy = "force-app"+"/main/default/"+$splitedPath[3]+"/"+$splitedPath[4]
-              Copy-Item $toCopy -Destination $destination
+              WRITE-HOST $toCopy
+              Copy-Item $toCopy/* -Destination $destination
 
 
               #$destination = $_.Replace("force-app","delta-package")
