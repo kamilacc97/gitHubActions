@@ -35,5 +35,5 @@ jobs:
           sfdx force:auth:jwt:grant --setalias MyOrg --jwtkeyfile ${{ secrets.JWTKEYFILE }} --clientid ${{ secrets.CONSUMERKEY }} --username ${{ secrets.USR }}
       - name: deployment
         run: |
-          sfdx force:source:deploy --sourcepath delta-package -u kamil.walo@cunning-fox-sfdga7.com
+          sfdx force:source:deploy --sourcepath delta-package -u MyOrg
        
