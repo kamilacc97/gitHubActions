@@ -32,7 +32,7 @@ jobs:
           }
       - name: authorization
         run: |
-          sfdx force:auth:jwt:grant --setalias=MyOrg --jwtkeyfile="${{ secrets.JWTKEYFILE }}" --clientid=${{ secrets.CONSUMERKEY }} --username=${{ secrets.USR }}
+          sfdx force:auth:jwt:grant --setalias="MyOrg" --jwtkeyfile="${{ secrets.JWTKEYFILE }}" --clientid="${{ secrets.CONSUMERKEY }}" --username="${{ secrets.USR }}"
       - name: deployment
         run: |
           sfdx force:source:deploy --sourcepath delta-package -u MyOrg
