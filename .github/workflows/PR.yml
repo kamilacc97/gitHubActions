@@ -33,7 +33,7 @@ jobs:
       - name: authorization
         run: |
           New-Item -Name "server.key" -ItemType File -Value "${{ secrets.JWTKEYFILE }}"
-          ls
+          sfdx force:auth:jwt:grant --setalias MyOrg --jwtkeyfile server.key --clientid ${{ secrets.CONSUMERKEY }} -u ${{ secrets.USR }}
 
       - name: deployment
         run: |
