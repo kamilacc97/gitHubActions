@@ -32,7 +32,7 @@ jobs:
           }
       - name: authorization
         run: |
-          New-Item -Name "server.key" -ItemType File -Value ${{ secrets.JWTKEYFILE }}
+          New-Item -Name "server.key" -ItemType File -Value "${{ secrets.JWTKEYFILE }}"
           ls
 
       - name: deployment
