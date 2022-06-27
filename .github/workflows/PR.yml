@@ -34,7 +34,10 @@ jobs:
         run: |
           New-Item -Name "server.key" -ItemType File -Value ${{ secrets.JWTKEYFILE }}
           ls
-          sfdx force:auth:jwt:grant --clientid=${{ secrets.CONSUMERKEY }} --jwtkeyfile=server.key --username=${{ secrets.USR }} --setdefaultdevhubusername
+          sfdx force:auth:jwt:grant --clientid=${{ secrets.CONSUMERKEY }} `
+           --jwtkeyfile=server.key `
+           --username=${{ secrets.USR }} `
+           --setdefaultdevhubusername
       - name: deployment
         run: |
           sfdx force:source:deploy --sourcepath delta-package -u MyOrg
