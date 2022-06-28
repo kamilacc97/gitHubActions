@@ -2,7 +2,7 @@ name: DEPLOYMENT
 
 on:
   pull_request:
-    branches: [submitted]
+    branches: [main]
 
 
 jobs:
