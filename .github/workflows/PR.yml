@@ -13,8 +13,11 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: create delta-package
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
-          $pathsString = git diff origin/main~0 origin/${{ github.head_ref }}~0 --name-only force-app
+          $pathsString = git diff origin/${{ BASE_REF }}~0 origin/${{ HEAD_REF }}~0 --name-only force-app
           Write-Host $pathsString
           $pathArray = $pathsString.Split()
 
