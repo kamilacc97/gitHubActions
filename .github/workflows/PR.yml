@@ -16,7 +16,7 @@ jobs:
 
       - name: create delta-package
         run: |
-          $pathsString = git diff origin/main origin/${{ github.head_ref }} --name-only force-app
+          $pathsString = git diff origin/main~0 origin/${{ github.head_ref }}~0 --name-only force-app
           Write-Host $pathsString
           $pathArray = $pathsString.Split()
 
