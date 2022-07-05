@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: [self-hosted, windows, x64]
+    container:
+      image: node:mcr.microsoft.com/powershell:latest
 
     steps:
       - uses: actions/checkout@v2
