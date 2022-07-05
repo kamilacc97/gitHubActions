@@ -51,4 +51,3 @@ jobs:
       - name: deployment
         run: |
           sfdx force:source:deploy --sourcepath delta-package -u MyOrg
-       
