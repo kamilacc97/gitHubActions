@@ -14,10 +14,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: payload
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: |
-        echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
 
       - name: create delta-package
         env:
